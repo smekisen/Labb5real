@@ -4,6 +4,8 @@
 
 GUI.c
 
+InteruptHandler.c
+
 LightLogic.c
 
 main.c
