@@ -29,7 +29,7 @@ int main(void)
 	UCSR0B = (1<<RXCIE0)| (1<<RXEN0) |(1<<TXEN0);
 	UBRR0L = 51;
 	INSTALL(&ih, SerialInterupt,IRQ_USART0_RX);
-	return TINYTIMBER(&ll, northArrive, 0);
+	return TINYTIMBER(&ll, lightStart, 0);
     /* Replace with your application code */
     while (1)
     {

@@ -27,7 +27,7 @@ void southArrive(LightLogic *self);
 void northEntry(LightLogic *self);
 void southEntry(LightLogic *self);
 void bridgeExit(LightLogic *self);
-
-void lightControl(LightLogic *self);
+void carDelay(LightLogic *self);
+void lightStart(LightLogic *self);
 
 #endif /* LIGHTLOGIC_H_ */

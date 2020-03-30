@@ -12,7 +12,7 @@
 #define INTERUPTHANDLER_H_
 typedef struct{
 	Object super;
-	LightLogic ll
+	LightLogic *ll;
 } InteruptHandler;
 
 #define InitInteruptHandler(ll) {initObject(),ll}

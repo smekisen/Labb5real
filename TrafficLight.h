@@ -11,15 +11,15 @@
 
 typedef struct {
 	Object super;
-	int north;
-	int south;
+	int send;
 } TrafficLight;
 
-#define initTrafficLight() {initObject(), 0, 0}
+#define initTrafficLight() {initObject(), 0}
 
-void greenNorth(TrafficLight *self);
-void greenSouth(TrafficLight *self);
-void redNorth(TrafficLight *self);
-void redSouth(TrafficLight *self);
+void greenNorth(TrafficLight *self,int value);
+void greenSouth(TrafficLight *self,int value);
+void redNorth(TrafficLight *self,int value);
+void redSouth(TrafficLight *self,int value);
+void sendToCom(TrafficLight *self);
 
 #endif /* TRAFFICLIGHT_H_ */
