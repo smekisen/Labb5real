@@ -30,9 +30,5 @@ int main(void)
 	UBRR0L = 51;
 	INSTALL(&ih, SerialInterupt,IRQ_USART0_RX);
 	return TINYTIMBER(&ll, lightStart, 0);
-    /* Replace with your application code */
-    while (1)
-    {
-    }
 }
 

@@ -12,28 +12,28 @@
 void SerialInterupt(InteruptHandler *self){
 	unsigned int temp = UDR0;
 	unsigned int temp2 = temp;
-	temp2 = temp2 << 3;
-	temp2 = temp2 >> 3;
+	temp2 = 0x1 & temp2;
 	if(temp2 == 1){
-		northArrive(self->ll);
+		ASYNC(self->ll,northArrive,NULL);
 	}
 	temp2 = temp;
-	temp2 = temp2 << 2;
-	temp2 = temp2 >> 3;
+	temp2 = temp2 >> 1;
+	temp2 = 0x1 & temp2;
 	if (temp2 == 1){
-		northEntry(self->ll);	
-	}
-	
-	temp2 = temp;
-	temp2 = temp2 << 1;
-	temp2 = temp2 >> 3;
-	if (temp2 == 1){
-		southArrive(self->ll);
+		ASYNC(self->ll,northEntry,NULL);	
 	}
 	
 	temp2 = temp;
-	temp2 = temp2 >> 3;
+	temp2 = temp2 >> 2;
+	temp2 = 0x1 & temp2;
 	if (temp2 == 1){
-		southEntry(self->ll);
+		ASYNC(self->ll,southArrive,NULL);
+	}
+	
+	temp2 = temp;
+	temp2 = temp2 >> 3;
+	temp2 = 0x1 & temp2;
+	if (temp2 == 1){
+		ASYNC(self->ll,southEntry,NULL);
 	}
 }

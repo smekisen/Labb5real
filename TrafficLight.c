@@ -6,6 +6,8 @@
  */ 
 #include "TrafficLight.h"
 #include "TinyTimber.h"
+#include "LightLogic.h"
+
 #include <avr/io.h>
 void greenNorth(TrafficLight *self, int value){
 	if (value == 1){
@@ -39,6 +41,7 @@ void redSouth(TrafficLight *self, int value){
 		self->send = ~0x8 & self->send;
 	}
 }
+
 
 void sendToCom(TrafficLight *self){
 	UDR0 = self->send;

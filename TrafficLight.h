@@ -5,7 +5,6 @@
  *  Author: wille
  */ 
 #include "TinyTimber.h"
-
 #ifndef TRAFFICLIGHT_H_
 #define TRAFFICLIGHT_H_
 
